@@ -73,5 +73,4 @@ async def clear(ctx, amount: int):
     await ctx.channel.purge(amount=amount)
     await ctx.send(f"Администратор {ctx.author.mention} удалил сообщения из чата DeltaShop", delete_after=10)
 
-
 StartBot.start(bot_for_start=bot)
