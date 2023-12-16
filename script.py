@@ -92,7 +92,7 @@ async def give_warn(member: disnake.Member, role: disnake.Role):
 @commands.has_permissions(administrator=True)
 async def voting(ctx, text):
     message = await ctx.send(f"@everyone \n {text}")
-    await message.add_reaction("✅")
+    await message.add_reaction("👍")
     await message.add_reaction("❌")
 
 
