@@ -1,6 +1,8 @@
 import disnake
 from disnake.ext import commands
 
+import StartBot
+
 bot = commands.Bot(command_prefix="?", help_command=None, intents=disnake.Intents.all())
 
 censored_words = [
@@ -72,4 +74,4 @@ async def clear(ctx, amount: int):
     await ctx.send(f"Администратор {ctx.author.mention} удалил сообщения из чата DeltaShop", delete_after=10)
 
 
-bot.run("MTE4NDg0ODI1MjUxMjc4NDM5NA.GDgI45.g5_x-bj6Rt4BNZjWdhbPTMuR1G_UT7LK8DIQPo")
+StartBot.start(bot_for_start=bot)
