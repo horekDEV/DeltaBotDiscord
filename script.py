@@ -87,4 +87,15 @@ async def give_warn(member: disnake.Member, role: disnake.Role):
     await member.add_roles(role)
     await member.send(f"Вам было выданно предупреждение!")
 
+
+@bot.command()
+@commands.has_permissions(administrator=True)
+async def voting(ctx, text):
+    message = await ctx.send(f"@everyone \n {text}")
+    await message.add_reaction("✅")
+    await message.add_reaction("❌")
+
+# user commands?
+# TODO
+
 StartBot.start(bot_for_start=bot)
