@@ -24,7 +24,7 @@ async def on_ready():
     print("------")
 
     await bot.change_presence(status=disnake.Status.idle,
-                              activity=disnake.Activity(type=disnake.ActivityType.watching))
+                              activity=disnake.Game('наблюдать за сервером DeltaShop'))
 
 
 @bot.event
@@ -94,8 +94,5 @@ async def voting(ctx, text):
     message = await ctx.send(f"@everyone \n {text}")
     await message.add_reaction("✅")
     await message.add_reaction("❌")
-
-# user commands?
-# TODO
 
 StartBot.start(bot_for_start=bot)
