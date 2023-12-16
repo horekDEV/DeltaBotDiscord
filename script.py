@@ -107,5 +107,4 @@ async def help_me(ctx):
 async def invite(ctx):
     await ctx.author.send(f"https://discord.gg/aZsFWpBvJq - {ctx.author.mention} ссылка для приглашения на сервер")
 
-
 StartBot.start(bot_for_start=bot)
