@@ -95,4 +95,17 @@ async def voting(ctx, text):
     await message.add_reaction("✅")
     await message.add_reaction("❌")
 
+
+# user commands?
+@bot.command()
+async def help_me(ctx):
+    await ctx.send(f"{ctx.author.mention} для обычных пользователей не предусмотренно команд в этой версии "
+                   f"бота(1.0.0)")
+
+
+@bot.command()
+async def invite(ctx):
+    await ctx.author.send(f"https://discord.gg/aZsFWpBvJq - {ctx.author.mention} ссылка для приглашения на сервер")
+
+
 StartBot.start(bot_for_start=bot)
