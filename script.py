@@ -3,7 +3,7 @@ from disnake.ext import commands
 
 import StartBot
 
-bot = commands.Bot(command_prefix="?", help_command=None, intents=disnake.Intents.all())
+bot = commands.Bot(command_prefix="/", help_command=None, intents=disnake.Intents.all())
 
 censored_words = [
     "даун", "блядь", "блять", "ебал", "fuck", "уебок",
@@ -98,9 +98,13 @@ async def voting(ctx, text):
 
 # user commands?
 @bot.command()
-async def help_me(ctx):
-    await ctx.send(f"{ctx.author.mention} для обычных пользователей не предусмотренно команд в этой версии "
-                   f"бота(1.0.0)")
+async def navigate(ctx):
+    await ctx.send(f"{ctx.author.mention} "
+                   f"\n все расценки на товары вы можете найти в: price_list💰"
+                   f"\n все важные новости по нашему проекту в: announcements📣"
+                   f"\n все правила нашего дискорд сервера находятся в: rules📖"
+                   f"\n здесь вы можете создать жалобу на игрока или сделать заказ: create_ticket📓"
+                   f"\n в этом канале вы можете общаться с другими участниками сервера: main_chat💌")
 
 
 @bot.command()
