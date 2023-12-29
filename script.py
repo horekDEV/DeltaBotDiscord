@@ -3,7 +3,10 @@ from disnake.ext import commands
 
 import StartBot
 
-bot = commands.Bot(command_prefix="/", help_command=None, intents=disnake.Intents.all())
+command_sync_flags = commands.CommandSyncFlags.none()
+command_sync_flags.sync_commands = False
+
+bot = commands.Bot(command_prefix=".", command_sync_flags=command_sync_flags, help_command=None, intents=disnake.Intents.all())
 
 censored_words = [
     "даун", "блядь", "блять", "ебал", "fuck", "уебок",
@@ -110,13 +113,20 @@ async def navigate(ctx):
 @bot.command()
 async def social_media(ctx):
     await ctx.send(f"{ctx.author.mention} "
-                   f"🖥️ наш телеграмм канал: https://t.me/deltashoptg"
-                   f"🎥 наш ютуб канал: https://www.youtube.com/channel/UCcN5QBp5OA3A6M8Ave-kS0A"
-                   f"🗃️ наш дискорд сервер(на котором вы находитесь🥹): https://discord.gg/aZsFWpBvJq")
+                   f"🖥️ наш телеграмм канал: https://t.me/deltashoptg \n"
+                   f"🎥 наш ютуб канал: https://www.youtube.com/channel/UCcN5QBp5OA3A6M8Ave-kS0A \n"
+                   f"🗃️ наш дискорд сервер(на котором вы находитесь🥹): https://discord.gg/aZsFWpBvJq \n")
 
 
 @bot.command()
 async def invite(ctx):
     await ctx.author.send(f"https://discord.gg/aZsFWpBvJq - {ctx.author.mention} ссылка для приглашения на сервер")
+
+
+@bot.command()
+async def bot_info(ctx):
+    await ctx.send(f"bot id/name: {bot} \n"
+                   f"bot version: 1.0.0 \n"
+                   f"bot author: horekdev \n")
 
 StartBot.start(bot_for_start=bot)
