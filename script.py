@@ -108,6 +108,14 @@ async def navigate(ctx):
 
 
 @bot.command()
+async def social_media(ctx):
+    await ctx.send(f"{ctx.author.mention} "
+                   f"🖥️ наш телеграмм канал: https://t.me/deltashoptg"
+                   f"🎥 наш ютуб канал: https://www.youtube.com/channel/UCcN5QBp5OA3A6M8Ave-kS0A"
+                   f"🗃️ наш дискорд сервер(на котором вы находитесь🥹): https://discord.gg/aZsFWpBvJq")
+
+
+@bot.command()
 async def invite(ctx):
     await ctx.author.send(f"https://discord.gg/aZsFWpBvJq - {ctx.author.mention} ссылка для приглашения на сервер")
 
